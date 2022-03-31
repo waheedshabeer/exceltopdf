@@ -13,6 +13,9 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: ({ colors }) => ({
+      WHITE:{
+        NORMAL:"white",
+      },
       BLACK:{
         NORMAL:"#212121"
       },

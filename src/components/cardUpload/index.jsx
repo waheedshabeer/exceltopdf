@@ -8,6 +8,7 @@ export const Upload = () => {
     const [IsLoading, setIsLoading] = useState(false)
 
     const onUploadFile = (file) => {
+        console.log(file)
         // e.preventDefault()
         // console.log(e)
         setIsLoading(true)
@@ -59,19 +60,41 @@ export const Upload = () => {
                     handleChange={onUploadFile}
                     name="file"
                     types={fileTypes}>
-                    <label
+                    <div
                         htmlFor="image-upload"
                         className="cursor-pointer w-full h-full rounded-md bg-GREEN-MEDIUM flex items-center justify-center border border-dashed border-GRAY-MEDIUM">
                         {IsLoading ? (
                             <div>Loading ...</div>
                         ) : (
-                            <img
-                                src={ASSETS.UPLOAD.UPLOAD_IMG}
-                                alt={''}
-                                className="object-contain"
-                            />
+                            <div className="flex flex-col items-center justify-center space-y-4">
+                                {/* <img
+                                    src={ASSETS.UPLOAD.UPLOAD_HEADER_LOGO}
+                                    alt={''}
+                                    className="object-contain w-16 h-16"
+                                /> */}
+                                <i className="fa fa-file-excel text-WHITE-NORMAL text-5xl md:text-6xl"></i>
+                                <div className="bg-WHITE-NORMAL p-5 flex items-center justify-center text-BLACK-NORMAL py-3 rounded-sm space-x-2">
+                                    <img
+                                        src={ASSETS.UPLOAD.UPLOAD_BTN_ICON}
+                                        alt={''}
+                                        className="object-cover"
+                                    />                                    
+                                    <i className="fa fa-file-plus text-BLACK-NORMAL text-lg"></i>
+                                    <div className="uppercase text-sm font-bold">
+                                        Chose Files
+                                    </div>
+                                </div>
+                                <div className="font-semibold text-WHITE-NORMAL text-sm md:text-base">
+                                    or drop Excel files here
+                                </div>
+                            </div>
+                            // <img
+                            //     src={ASSETS.UPLOAD.UPLOAD_IMG}
+                            //     alt={''}
+                            //     className="object-contain"
+                            // />
                         )}
-                    </label>
+                    </div>
                     {/* <input
                     type="file"
                     className="hidden"

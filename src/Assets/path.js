@@ -10,6 +10,8 @@ import EXCEL_ONLINE from './excel-online.svg'
 import UPLOAD_IMG from './upload-img.PNG'
 import LOGO from './logo.PNG'
 import NAV_LOGO from './website-logo.png'
+import UPLOAD_BTN_ICON from './upload-btn-icon.PNG'
+import UPLOAD_HEADER_LOGO from './upload-header-image.PNG'
 
 export const ASSETS = {
     LOGO,
@@ -33,5 +35,7 @@ export const ASSETS = {
     },
     UPLOAD: {
         UPLOAD_IMG,
+        UPLOAD_HEADER_LOGO,
+        UPLOAD_BTN_ICON,
     },
 }
