@@ -17,11 +17,11 @@ export const Upload = () => {
         formData.append('file', file)
         axios({
             method: 'POST',
-            url: 'http://64.227.185.17/',
+            url: 'https://553c-39-53-102-121.ngrok.io/',
             data: formData,
             headers: {
-                'Content-Type': 'multipart/form-data',
-                'Access-Control-Allow-Origin': '*',
+                // 'Content-Type': 'multipart/form-data',
+                // 'Access-Control-Allow-Origin': '*',
             },
         })
             .then(({data}) => {
