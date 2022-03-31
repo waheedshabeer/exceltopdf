@@ -1,15 +1,18 @@
-import axios from 'axios'
 import React, {useState} from 'react'
+import { FileUploader } from "react-drag-drop-files";
+import axios from 'axios'
 import {ASSETS} from '../../Assets/path'
+const fileTypes = ["xlsx", "xls", "csv"];
 
 export const Upload = () => {
     const [IsLoading, setIsLoading] = useState(false)
 
-    const onUploadFile = (e) => {
-        e.preventDefault()
+    const onUploadFile = (file) => {
+        // e.preventDefault()
+        // console.log(e)
         setIsLoading(true)
         const formData = new FormData()
-        let file = e.target.files[0]
+        // let file = e.target.files[0]
 
         formData.append('file', file)
         axios({
@@ -17,13 +20,13 @@ export const Upload = () => {
             url: 'http://64.227.185.17/',
             data: formData,
             headers: {
-                // 'Content-Type': 'multipart/form-data',
-                // 'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'multipart/form-data',
+                'Access-Control-Allow-Origin': '*',
             },
         })
             .then(({data}) => {
                 console.log(data)
-                e.target.value = null
+                file = null
                 // alert(data.detail)
                 setIsLoading(false)
                 window.open(data?.pdf_url)
@@ -35,8 +38,8 @@ export const Upload = () => {
             .finally(() => {
                 setIsLoading(false)
             })
-    }
-    console.log('Called', IsLoading)
+    } 
+
     return (
         <div className="page-padding py-20 space-y-10">
             <div className="flex flex-col space-y-2 items-center justify-center">
@@ -50,8 +53,9 @@ export const Upload = () => {
                     Convert your Excel spreadsheet to PDF
                 </div>
             </div>
+            <FileUploader handleChange={onUploadFile} name="file" types={fileTypes} >
             <div className="bg-GREEN-LIGHT w-full h-80 p-3">
-                <label
+                {/* <label
                     htmlFor="image-upload"
                     className="cursor-pointer w-full h-full rounded-md bg-GREEN-MEDIUM flex items-center justify-center border border-dashed border-GRAY-MEDIUM">
                     {IsLoading ? (
@@ -73,8 +77,9 @@ export const Upload = () => {
                     id={`image-upload`}
                     accept=".xlsx, .xls, .csv"
                     // disabled={IsLoading}
-                />
+                /> */}
             </div>
+            </FileUploader>
         </div>
     )
 }
