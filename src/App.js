@@ -1,19 +1,22 @@
+import React from 'react'
 import './App.css'
 import {CardOnline} from './components/cardOnline'
 import {Card} from './components/cards/card'
 import {CardTwo} from './components/cardsTwo/card'
 import {Upload} from './components/cardUpload'
-import { Footer } from './components/Footer'
+import {Footer} from './components/Footer'
+import {NavBar} from './components/NavBar'
 
 function App() {
     return (
-        <div className="">
+        <React.Fragment>
+            <NavBar />
             <Upload />
             <Card />
             <CardOnline />
             <CardTwo />
-            <Footer/>
-        </div>
+            <Footer />
+        </React.Fragment>
     )
 }
 

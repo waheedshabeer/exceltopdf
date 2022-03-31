@@ -9,9 +9,13 @@ import EXCEL_GREEN from './excel-green.png'
 import EXCEL_ONLINE from './excel-online.svg'
 import UPLOAD_IMG from './upload-img.PNG'
 import LOGO from './logo.PNG'
+import NAV_LOGO from './website-logo.png'
 
 export const ASSETS = {
     LOGO,
+    NAVBAR: {
+        NAV_LOGO,
+    },
     CARDS: {
         BULB,
         CERTICATE,
