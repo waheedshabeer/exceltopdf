@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import { FileUploader } from "react-drag-drop-files";
+import {FileUploader} from 'react-drag-drop-files'
 import axios from 'axios'
 import {ASSETS} from '../../Assets/path'
-const fileTypes = ["xlsx", "xls", "csv"];
+const fileTypes = ['xlsx', 'xls', 'csv']
 
 export const Upload = () => {
     const [IsLoading, setIsLoading] = useState(false)
@@ -38,7 +38,7 @@ export const Upload = () => {
             .finally(() => {
                 setIsLoading(false)
             })
-    } 
+    }
 
     return (
         <div className="page-padding py-20 space-y-10">
@@ -53,23 +53,26 @@ export const Upload = () => {
                     Convert your Excel spreadsheet to PDF
                 </div>
             </div>
-            <FileUploader handleChange={onUploadFile} name="file" types={fileTypes} >
-            <div className="bg-GREEN-LIGHT w-full h-80 p-3">
-                {/* <label
-                    htmlFor="image-upload"
-                    className="cursor-pointer w-full h-full rounded-md bg-GREEN-MEDIUM flex items-center justify-center border border-dashed border-GRAY-MEDIUM">
-                    {IsLoading ? (
-                        <div>Loading ...</div>
-                    ) : (
-                        <img
-                            src={ASSETS.UPLOAD.UPLOAD_IMG}
-                            alt={''}
-                            className="object-contain"
-                        />
-                    )}
-                </label>
 
-                <input
+            <div className="bg-GREEN-LIGHT w-full h-80 p-3">
+                <FileUploader
+                    handleChange={onUploadFile}
+                    name="file"
+                    types={fileTypes}>
+                    <label
+                        htmlFor="image-upload"
+                        className="cursor-pointer w-full h-full rounded-md bg-GREEN-MEDIUM flex items-center justify-center border border-dashed border-GRAY-MEDIUM">
+                        {IsLoading ? (
+                            <div>Loading ...</div>
+                        ) : (
+                            <img
+                                src={ASSETS.UPLOAD.UPLOAD_IMG}
+                                alt={''}
+                                className="object-contain"
+                            />
+                        )}
+                    </label>
+                    {/* <input
                     type="file"
                     className="hidden"
                     name="upload-file"
@@ -78,8 +81,8 @@ export const Upload = () => {
                     accept=".xlsx, .xls, .csv"
                     // disabled={IsLoading}
                 /> */}
+                </FileUploader>
             </div>
-            </FileUploader>
         </div>
     )
 }
