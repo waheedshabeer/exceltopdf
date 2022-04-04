@@ -18,7 +18,7 @@ export const Upload = () => {
         formData.append('file', file)
         axios({
             method: 'POST',
-            url: 'https://553c-39-53-102-121.ngrok.io/',
+            url: 'https://43bf-39-53-102-121.ngrok.io',
             data: formData,
             headers: {
                 // 'Content-Type': 'multipart/form-data',
