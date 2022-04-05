@@ -18,7 +18,7 @@ export const Upload = () => {
         formData.append('file', file)
         axios({
             method: 'POST',
-            url: 'https://43bf-39-53-102-121.ngrok.io',
+            url: 'https://4d19-39-53-102-121.ngrok.io',
             data: formData,
             headers: {
                 // 'Content-Type': 'multipart/form-data',
@@ -64,7 +64,7 @@ export const Upload = () => {
                         htmlFor="image-upload"
                         className="cursor-pointer w-full h-full rounded-md bg-GREEN-MEDIUM flex items-center justify-center border border-dashed border-GRAY-MEDIUM">
                         {IsLoading ? (
-                            <div>Loading ...</div>
+                            <div className='text-WHITE-NORMAL'>Loading ...</div>
                         ) : (
                             <div className="flex flex-col items-center justify-center space-y-4">
                                 {/* <img
