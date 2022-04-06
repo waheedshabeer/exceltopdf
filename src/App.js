@@ -5,12 +5,12 @@ import {Card} from './components/cards/card'
 import {CardTwo} from './components/cardsTwo/card'
 import {Upload} from './components/cardUpload'
 import {Footer} from './components/Footer'
-import {NavBar} from './components/NavBar'
+// import {NavBar} from './components/NavBar'
 
 function App() {
     return (
         <React.Fragment>
-            <NavBar />
+            {/* <NavBar /> */}
             <Upload />
             <Card />
             <CardOnline />

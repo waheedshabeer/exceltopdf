@@ -42,68 +42,49 @@ export const Upload = () => {
     }
 
     return (
-        <div className="page-padding py-20 space-y-10">
-            <div className="flex flex-col space-y-2 items-center justify-center">
-                <div className="flex items-center text-BLACK-NORMAL space-x-2">
-                    <img src={ASSETS.LOGO} alt="" className="" />
-                    <div className="text-center font-semibold lg:font-bold text-xl md:text-2xl text-BLACK-NORMAL">
-                        Excel to PDF
+        <div
+            className="page-padding py-10 space-y-24 2xl:space-y-32  bg-cover bg-no-repeat flex flex-col min-h-screen"
+            style={{backgroundImage: `url(${ASSETS.UPLOAD.HEADER_BG})`}}>
+            <img src={ASSETS.NAVBAR.NAV_LOGO} alt="" className="w-14 h-14" />
+            <div className="bg-WHITE-NORMAL  w-full self-center px-16  py-10  2xl:py-16 rounded-2xl shadow-lg">
+                <div className="pb-10 flex space-x-8">
+                    <img
+                        src={ASSETS.UPLOAD.HEADER_LOGO}
+                        alt=""
+                        className="w-16 h-16 object-cover"
+                    />
+                    <div className=" text-left">
+                        <div className=" font-semibold lg:font-bold text-xl md:text-2xl text-BLACK-NORMAL">
+                            Excel to PDF
+                        </div>
+
+                        <div className="text-xl font-normal">
+                            Convert your Excel spreadsheet to PDF
+                        </div>
                     </div>
                 </div>
-                <div className="text-xl font-light">
-                    Convert your Excel spreadsheet to PDF
-                </div>
-            </div>
-
-            <div className="bg-GREEN-LIGHT w-full h-80 p-3">
                 <FileUploader
                     handleChange={onUploadFile}
                     name="file"
                     types={fileTypes}>
                     <div
                         htmlFor="image-upload"
-                        className="cursor-pointer w-full h-full rounded-md bg-GREEN-MEDIUM flex items-center justify-center border border-dashed border-GRAY-MEDIUM">
+                        className="cursor-pointer h-48 2xl:h-60 w-full rounded-xl bg-GREEN-EXTRA_LIGHT flex items-center justify-center border border-GREEN-BASE border-dashed ">
                         {IsLoading ? (
-                            <div className='text-WHITE-NORMAL'>Loading ...</div>
+                            <div className="text-BLACK-NORMAL">Loading ...</div>
                         ) : (
                             <div className="flex flex-col items-center justify-center space-y-4">
-                                {/* <img
-                                    src={ASSETS.UPLOAD.UPLOAD_HEADER_LOGO}
-                                    alt={''}
-                                    className="object-contain w-16 h-16"
-                                /> */}
-                                <i className="fa fa-file-excel text-WHITE-NORMAL text-5xl md:text-6xl"></i>
-                                <div className="bg-WHITE-NORMAL p-5 flex items-center justify-center text-BLACK-NORMAL py-3 rounded-sm space-x-2">
-                                    <img
-                                        src={ASSETS.UPLOAD.UPLOAD_BTN_ICON}
-                                        alt={''}
-                                        className="object-cover"
-                                    />                                    
-                                    <i className="fa fa-file-plus text-BLACK-NORMAL text-lg"></i>
-                                    <div className="uppercase text-sm font-bold">
+                                <div className="bg-GREEN-BASE text-WHITE-NORMAL px-10 flex items-center justify-center  py-3 rounded-md space-x-2">
+                                    <div className="uppercase text-sm font-bold ">
                                         Chose Files
                                     </div>
                                 </div>
-                                <div className="font-semibold text-WHITE-NORMAL text-sm md:text-base">
-                                    or drop Excel files here
+                                <div className="font-semibold text-GREEN-BASE text-sm md:text-base">
+                                    or drop a file here
                                 </div>
                             </div>
-                            // <img
-                            //     src={ASSETS.UPLOAD.UPLOAD_IMG}
-                            //     alt={''}
-                            //     className="object-contain"
-                            // />
                         )}
                     </div>
-                    {/* <input
-                    type="file"
-                    className="hidden"
-                    name="upload-file"
-                    onChange={(e) => onUploadFile(e)}
-                    id={`image-upload`}
-                    accept=".xlsx, .xls, .csv"
-                    // disabled={IsLoading}
-                /> */}
                 </FileUploader>
             </div>
         </div>
