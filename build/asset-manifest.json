@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.0ab55a64.css",
+    "main.js": "./static/js/main.5ec3f9f8.js",
+    "static/media/header-bg.svg": "./static/media/header-bg.e453b2b250789f15085db89fb1f92ba8.svg",
+    "static/media/header-logo.svg": "./static/media/header-logo.5ceab5fee8f41a272fa3485eef9a950b.svg",
+    "static/media/excel-online.svg": "./static/media/excel-online.0072fe008dcabf4fdc0920ca34e76958.svg",
+    "static/media/upload-img.PNG": "./static/media/upload-img.7c85292c416c15014c10.PNG",
+    "static/media/thumb.svg": "./static/media/thumb.d87ff218f8f01d7b05ef3c33e0685c1b.svg",
+    "static/media/pdf.svg": "./static/media/pdf.f311159a2781a3cfdfce8e94741669ff.svg",
+    "static/media/bulb.svg": "./static/media/bulb.7ca27d0428c9614899dc0c6ee936a803.svg",
+    "static/media/upload-header-image.PNG": "./static/media/upload-header-image.e509c25b04944e62dcb4.PNG",
+    "index.html": "./index.html",
+    "static/media/cloud.svg": "./static/media/cloud.0b1d8a20e389c1be66e885410e9786f9.svg",
+    "static/media/certificate.svg": "./static/media/certificate.ce852e16512bd6e094f12d7c6d4844f5.svg",
+    "static/media/lock.svg": "./static/media/lock.2e2d4d86b07e272f0e17098a8ef1a83c.svg",
+    "static/media/logo.PNG": "./static/media/logo.6394fd01f1931601da8c.PNG",
+    "static/media/upload-btn-icon.PNG": "./static/media/upload-btn-icon.43133776c7fbb51e9b57.PNG",
+    "main.0ab55a64.css.map": "./static/css/main.0ab55a64.css.map",
+    "main.5ec3f9f8.js.map": "./static/js/main.5ec3f9f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ab55a64.css",
+    "static/js/main.5ec3f9f8.js"
+  ]
+}
