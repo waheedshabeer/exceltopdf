@@ -18,7 +18,8 @@ export const Upload = () => {
         formData.append('file', file)
         axios({
             method: 'POST',
-            url: 'https://4d19-39-53-102-121.ngrok.io',
+            url: 'https://exceltopdf.a1office.co/upload/',
+            // url: 'https://4d19-39-53-102-121.ngrok.io',
             data: formData,
             headers: {
                 // 'Content-Type': 'multipart/form-data',
