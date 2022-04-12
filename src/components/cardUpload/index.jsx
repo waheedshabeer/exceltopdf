@@ -2,20 +2,20 @@ import React, {useState} from 'react'
 import {FileUploader} from 'react-drag-drop-files'
 import axios from 'axios'
 import {ASSETS} from '../../Assets/path'
-const fileTypes = ['xlsx', 'xls', 'csv']
+import swal from 'sweetalert'
+const fileTypes = ['xlsx', 'xls']
 
 export const Upload = () => {
     const [IsLoading, setIsLoading] = useState(false)
 
     const onUploadFile = (file) => {
-        console.log(file)
         // e.preventDefault()
-        // console.log(e)
+        console.log(file.name.split('.')[1])
         setIsLoading(true)
         const formData = new FormData()
         // let file = e.target.files[0]
-
-        formData.append('file', file)
+        formData.append('file', file , Date.now() + "." + file.name.split('.')[1])
+        console.log(formData)
         axios({
             method: 'POST',
             url: 'https://exceltopdf.a1office.co/upload/',
@@ -29,6 +29,7 @@ export const Upload = () => {
             .then(({data}) => {
                 console.log(data)
                 file = null
+                console.log(file)
                 // alert(data.detail)
                 setIsLoading(false)
                 window.open(data?.pdf_url)
@@ -66,7 +67,9 @@ export const Upload = () => {
                 </div>
                 <FileUploader
                     handleChange={onUploadFile}
-                    name="file"
+                    fileOrFiles={null}
+                    name={Date.now()}
+                    onTypeError={(err) => swal('Error!', err, 'error')}
                     types={fileTypes}>
                     <div
                         htmlFor="image-upload"
@@ -75,9 +78,9 @@ export const Upload = () => {
                             <div className="text-BLACK-NORMAL">Loading ...</div>
                         ) : (
                             <div className="flex flex-col items-center justify-center space-y-4">
-                                <div className="bg-GREEN-BASE text-WHITE-NORMAL px-10 flex items-center justify-center  py-3 rounded-md space-x-2">
-                                    <div className="uppercase text-sm font-bold ">
-                                        Chose Files
+                                <div  title='excel to pdf' className="bg-GREEN-BASE text-WHITE-NORMAL px-10 flex items-center justify-center  py-3 rounded-md space-x-2">
+                                    <div  className="uppercase text-sm font-bold ">
+                                        Choose Files
                                     </div>
                                 </div>
                                 <div className="font-semibold text-GREEN-BASE text-sm md:text-base">
